@@ -1,0 +1,37 @@
+.center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 2rem;
+}
+
+.wrapper {
+  display: flex;
+  height: max-content;
+  width: 75%;
+  background-color: #ad8ae28f;
+  border: 2px solid #6f45ad;
+  padding: 1rem;
+}
+
+.wrap {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  width: 50%;
+  margin: .5rem;
+  padding: 1rem;
+  border: 2px solid #6f45ad;
+  border-radius: 10px;
+  background: white;
+}
+
+.title {
+  width: 100%;
+  display: flex;
+  justify-content: space-evenly;
+}
+
+table {
+  width: 100%;
+}

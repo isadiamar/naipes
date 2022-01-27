@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import {Component} from '@angular/core';
+import {PersistenceService} from "./shared/services/persistence.service";
 
 @Component({
   selector: 'app-root',
@@ -7,4 +8,20 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'naipesAngular';
+  isLogged: boolean = false;
+
+  constructor(private persistence: PersistenceService) {
+    this.isLogged = this.persistence.isLogged;
+    this.persistence.loggedChange.subscribe((value) => {
+      this.isLogged = value;
+    })
+  }
+
+  logout(): void {
+    this.persistence.setToken(null);
+  }
+
 }
+
+
+

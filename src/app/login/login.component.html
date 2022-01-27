@@ -1,0 +1,26 @@
+<section class="auth">
+  <h1>Iniciar sesión</h1>
+
+  <form [formGroup]="loginForm">
+
+    <div class="control">
+      <mat-form-field appearance="outline">
+        <mat-label>Nombre de Usuario</mat-label>
+        <input formControlName="username" matInput placeholder="user1" required>
+      </mat-form-field>
+    </div>
+
+    <div class="control">
+      <mat-form-field appearance="outline">
+        <mat-label>Contraseña</mat-label>
+        <input formControlName="password" matInput placeholder="password" required type="password">
+      </mat-form-field>
+    </div>
+
+    <div class="actions">
+      <button (click)="submit()" [disabled]="submitDisabled" class="toogle" type="button">
+        Iniciar sesión
+      </button>
+    </div>
+  </form>
+</section>

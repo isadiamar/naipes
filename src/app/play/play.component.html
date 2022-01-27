@@ -1,0 +1,45 @@
+<section class="center">
+  <div class="wrapper">
+    <div id="optionsMenu">
+      <div class="wrap" id="currentGame">
+        <div class="centerInColumn" id="score">
+          <p class="label">Puntuación</p>
+          <p>{{userScore}} pts</p>
+        </div>
+
+        <div class="centerInColumn" id="timeLeft">
+          <p class="label">Tiempo</p>
+          <p>{{currentTime}}</p>
+        </div>
+      </div>
+
+      <div class="wrap" id="totalScore">
+        <p class="label">Total</p>
+        <p id="userTotalScore">{{userScore}}</p>
+      </div>
+
+      <div class="wrap" id="saveOptions">
+        <button (click)="saveGame()" *ngIf="isLogged" class="button" color="accent" mat-stroked-button>Guardar partida
+        </button>
+        <button (click)="loadGame()" *ngIf="isLogged" class="button" color="primary" mat-stroked-button>Recuperar
+          partida
+        </button>
+        <button (click)="saveRecord()" *ngIf="savedRecord && isLogged" [disabled]="disabled" class="button"
+                color="primary"
+                mat-flat-button>Grabar
+          partida
+        </button>
+        <button (click)="newGame()" class="button" color="accent" mat-flat-button>Volver a jugar
+        </button>
+      </div>
+    </div>
+
+    <div class="center" id="board">
+      <div *ngFor="let card of playingCards" class="card-item ">
+        <img (click)="endGame || !blocked && !card.flipped && flip(card)" alt="img"
+             src="{{card.flipped ? card.img : backCard}}"/>
+      </div>
+    </div>
+  </div>
+
+</section>

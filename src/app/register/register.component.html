@@ -1,0 +1,54 @@
+<section class="auth">
+  <h1>Registrarse</h1>
+  <form *ngIf="registerForm" [formGroup]="registerForm">
+
+    <div class="control">
+      <mat-form-field appearance="outline">
+        <mat-label>Nombre de Usuario</mat-label>
+        <input (focusout)="checkUsername()" formControlName="username" matInput placeholder="user1" required>
+        <mat-error *ngIf="registerForm.controls['username'].hasError('takenUsername')">Este nombre de usuario ya está en
+          uso
+        </mat-error>
+        <mat-error *ngIf="registerForm.controls['username'].hasError('required')">Please enter an username</mat-error>
+      </mat-form-field>
+    </div>
+
+    <div class="control">
+      <mat-form-field appearance="outline">
+        <mat-label>Email</mat-label>
+        <input formControlName="email" matInput placeholder="pat@example.com" required>
+        <mat-error *ngIf="registerForm.controls['email'].hasError('pattern')">Invalid email, it has to be:
+          example@domain.com
+        </mat-error>
+        <mat-error *ngIf="registerForm.controls['email'].hasError('required')">Please enter an email</mat-error>
+      </mat-form-field>
+    </div>
+
+    <div class="control">
+      <mat-form-field appearance="outline">
+        <mat-label>Contraseña</mat-label>
+        <input formControlName="password" matInput placeholder="password" required type="password">
+        <mat-error *ngIf="registerForm.controls['password'].hasError('minlength')">Minimo 6 caracteres</mat-error>
+        <mat-error *ngIf="registerForm.controls['password'].hasError('required')">Please enter a password</mat-error>
+      </mat-form-field>
+    </div>
+
+    <div class="control">
+      <mat-form-field appearance="outline">
+        <mat-label>Repetir Contraseña</mat-label>
+        <input formControlName="confirmPassword" matInput placeholder="password" required type="password">
+        <mat-error *ngIf="registerForm.controls['confirmPassword'].hasError('nomatch')">Las contraseñas no coinciden
+        </mat-error>
+        <mat-error *ngIf="registerForm.controls['confirmPassword'].hasError('required')">Please enter a password
+        </mat-error>
+      </mat-form-field>
+    </div>
+
+    <div class="actions">
+      <button (click)="submit()" [disabled]="submitDisabled" class="toogle" type="button">
+        Crear cuenta nueva
+      </button>
+    </div>
+
+  </form>
+</section>

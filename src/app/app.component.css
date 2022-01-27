@@ -1,0 +1,25 @@
+#menu {
+  background-color: #6f45ad !important;
+  font-weight: 600;
+}
+
+#logo {
+  margin-left: 2.5rem;
+  margin-right: 1em;
+}
+
+#navbarTogglerDemo02 {
+  margin: 0 2em 0 1em;
+}
+
+#navbarTogglerDemo02 > ul li {
+  padding-right: 1.5rem;
+}
+
+#navbarTogglerDemo01 > ul li {
+  padding-right: 1.5em;
+}
+
+.m-auto {
+  margin-right: 0 !important;
+}

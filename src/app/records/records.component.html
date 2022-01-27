@@ -1,0 +1,88 @@
+<section class="center">
+  <div class="wrapper">
+    <div class="wrap">
+      <h2>Records Generales</h2>
+      <table [dataSource]="globalRecords" mat-table>
+        <!-- Username Column -->
+        <ng-container matColumnDef="username">
+          <th *matHeaderCellDef mat-header-cell>Username</th>
+          <td *matCellDef="let element" mat-cell> {{element.username}} </td>
+        </ng-container>
+
+        <!-- Puntuaction Column -->
+        <ng-container matColumnDef="punctuation">
+          <th *matHeaderCellDef mat-header-cell>Puntuación</th>
+          <td *matCellDef="let element" mat-cell> {{element.punctuation}} </td>
+        </ng-container>
+
+        <!-- Carts Column -->
+        <ng-container matColumnDef="cards">
+          <th *matHeaderCellDef mat-header-cell>Cartas</th>
+          <td *matCellDef="let element" mat-cell> {{element.cards}} </td>
+        </ng-container>
+
+        <!-- Time Column -->
+        <ng-container matColumnDef="disposedTime">
+          <th *matHeaderCellDef mat-header-cell>Tiempo usado</th>
+          <td *matCellDef="let element" mat-cell> {{element.disposedTime}} </td>
+        </ng-container>
+
+        <!-- Date Column -->
+        <ng-container matColumnDef="recordDate">
+          <th *matHeaderCellDef mat-header-cell>Fecha</th>
+          <td *matCellDef="let element" mat-cell> {{getDate(element.recordDate)}} </td>
+        </ng-container>
+
+        <tr *matHeaderRowDef="displayedColumns" mat-header-row></tr>
+        <tr *matRowDef="let row; columns: displayedColumns;" mat-row></tr>
+      </table>
+    </div>
+
+    <div *ngIf="isLogged" class="wrap">
+      <div class="title">
+        <h2>Records {{username}}</h2>
+        <button (click)="deleteRecords()" aria-label="Example icon button with a vertical three dot icon" color="warn"
+                mat-icon-button>
+          <mat-icon>delete</mat-icon>
+        </button>
+      </div>
+
+      <table [dataSource]="userRecords" mat-table>
+        <!-- Username Column -->
+        <ng-container matColumnDef="username">
+          <th *matHeaderCellDef mat-header-cell>Username</th>
+          <td *matCellDef="let element" mat-cell> {{element.username}} </td>
+        </ng-container>
+
+        <!-- Puntuaction Column -->
+        <ng-container matColumnDef="punctuation">
+          <th *matHeaderCellDef mat-header-cell>Puntuación</th>
+          <td *matCellDef="let element" mat-cell> {{element.punctuation}} </td>
+        </ng-container>
+
+        <!-- Carts Column -->
+        <ng-container matColumnDef="cards">
+          <th *matHeaderCellDef mat-header-cell>Cartas</th>
+          <td *matCellDef="let element" mat-cell> {{element.cards}} </td>
+        </ng-container>
+
+        <!-- Time Column -->
+        <ng-container matColumnDef="disposedTime">
+          <th *matHeaderCellDef mat-header-cell>Tiempo usado</th>
+          <td *matCellDef="let element" mat-cell> {{element.disposedTime}} </td>
+        </ng-container>
+
+        <!-- Date Column -->
+        <ng-container matColumnDef="recordDate">
+          <th *matHeaderCellDef mat-header-cell>Fecha</th>
+          <td *matCellDef="let element" mat-cell> {{getDate(element.recordDate)}} </td>
+        </ng-container>
+
+        <tr *matHeaderRowDef="displayedColumns" mat-header-row></tr>
+        <tr *matRowDef="let row; columns: displayedColumns;" mat-row></tr>
+      </table>
+    </div>
+
+  </div>
+</section>
+

@@ -1,0 +1,25 @@
+.center {
+  margin-top: 3rem;
+  display: flex;
+  justify-content: center;
+}
+
+.window {
+  width: 35rem;
+  padding: 4rem 2rem;
+  border-radius: 5px;
+  background-color: #fcecc9 !important;
+  box-shadow: 2px 2px 1px rgba(0, 0, 0, 0.23);
+}
+
+.window:hover {
+  box-shadow: 60px -16px #db504a;
+}
+
+#goals {
+  font-weight: bold;
+}
+
+.display-4 {
+  font-weight: 400 !important;
+}

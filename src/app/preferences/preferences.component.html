@@ -1,0 +1,19 @@
+<section class=center>
+  <form id="box">
+    <label id="labelImages">Número de Imágenes</label>
+    <select [(ngModel)]="selectedImages" name="numberOfImages">
+      <option *ngFor="let option of imagesOptions" [value]="option">{{option}}</option>
+    </select>
+
+    <label id="labelTimer">Tiempo máximo</label>
+    <select [(ngModel)]="selectedTime" name="timer">
+      <option *ngFor="let option of timeOptions" [value]="option">{{option}}</option>
+    </select>
+
+    <button (click)="savePreferences()" class="btn btnPersonalized" id="btnSelect" type="button">
+      Accept
+    </button>
+
+  </form>
+
+</section>
